@@ -37,6 +37,7 @@ export default function LoginPage() {
     const formData = new FormData();
     formData.append("id_number", values.id_number);
     formData.append("password", values.password);
+    formData.append("remember_me", String(values.remember_me));
 
     startTransition(() => {
       formAction(formData);

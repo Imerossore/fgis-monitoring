@@ -50,6 +50,7 @@ export async function login(prevState: unknown, formdata: FormData) {
   "use server";
   const id_number = formdata.get("id_number") as string;
   const password = formdata.get("password") as string;
+  const remember_me = formdata.get("remember_me") as string;
 
   const { data } = await supabase
     .from("users")
@@ -64,7 +65,7 @@ export async function login(prevState: unknown, formdata: FormData) {
 
   const userId = data?.id;
 
-  await createSession(userId);
+  await createSession(userId, remember_me === "true");
 
   return { success: "Logged in successfully" };
 }

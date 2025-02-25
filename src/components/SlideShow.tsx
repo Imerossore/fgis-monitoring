@@ -42,7 +42,7 @@ const Slideshow = () => {
           alt="background picture"
           fill
           style={{ objectFit: "fill", objectPosition: "top" }}
-          className="rounded-2xl"
+          className="rounded-none md:rounded-2xl"
           priority
         />
       </motion.div>
@@ -59,7 +59,7 @@ const Slideshow = () => {
           alt="background picture"
           fill
           style={{ objectFit: "fill", objectPosition: "top" }}
-          className="rounded-2xl"
+          className="rounded-none md:rounded-2xl"
           priority
         />
       </motion.div>
