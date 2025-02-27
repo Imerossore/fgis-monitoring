@@ -29,7 +29,7 @@ async function uploadToCloudinary(file: File) {
   }
 }
 
-export async function uploadProfile(prevState: any, formData: FormData) {
+export async function uploadProfile(prevState: unknown, formData: FormData) {
   try {
     const firstName = formData.get("firstName") as string;
     const lastName = formData.get("lastName") as string;

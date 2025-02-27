@@ -1,4 +1,3 @@
-import { getUsers } from "@/actions/users";
 import Header from "@/components/Header";
 import SetupProfile from "@/components/Setup-profile";
 import SideBar from "@/components/SideBar";

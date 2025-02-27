@@ -53,7 +53,7 @@ export default function LoginPage() {
     if (state?.error) {
       toast.error(state.error);
     }
-  }, [state]);
+  }, [state, router]);
 
   return (
     <Form {...form}>

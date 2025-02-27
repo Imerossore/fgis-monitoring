@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { uploadProfile } from "@/actions/uploadProfile";
+import Image from "next/image";
 
 const initialState = {
   success: false,
@@ -91,7 +92,7 @@ export default function ProfileForm() {
           className="w-32 h-32 rounded-full overflow-hidden cursor-pointer border-2 border-gray-300 hover:border-gray-400 transition-colors"
         >
           {preview ? (
-            <img
+            <Image
               src={preview}
               alt="Preview"
               className="w-full h-full object-cover"
