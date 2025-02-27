@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import getAuthUser from "./lib/getAuthUser";
+import { getAuthUser } from "./lib/getAuthUser";
 
-const ProtectedRoutes = ["/dashboard"];
+const ProtectedRoutes = ["/dashboard", "/setting"];
 const PublicRoutes = ["/login", "/register", "/"];
 export async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname;

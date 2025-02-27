@@ -9,7 +9,7 @@ export default function DivisionCard({
   link: string;
 }) {
   return (
-    <Card className="glassmorphic h-32 bg-opacity-0 rounded-2xl p-4 hover:scale-105 duration-300">
+    <Card className="glassmorphic h-32 bg-opacity-0 rounded-2xl p-4 hover:scale-[1.02] duration-300">
       <CardContent className="p-0 flex flex-col justify-between  gap-2 h-full">
         <div>
           <h1 className="text-white font-bold text-3xl leading-none m-0 ">

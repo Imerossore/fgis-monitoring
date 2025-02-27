@@ -20,7 +20,7 @@ export default function SideBarLink({ label, href, icon }: SideBarLinkProps) {
         className={`flex items-center gap-2 p-1  rounded-md ${
           isActive
             ? "bg-primary text-white "
-            : "bg-white hover:bg-slate-200 duration-700 "
+            : "bg-white hover:bg-slate-200 duration-300 "
         }`}
       >
         <span

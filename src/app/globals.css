@@ -80,7 +80,7 @@ body {
   }
 
   body {
-    @apply bg-background text-foreground h-full transition-all duration-300;
+    @apply bg-background text-foreground h-full transition-all duration-150 ease-in-out;
   }
 }
 
