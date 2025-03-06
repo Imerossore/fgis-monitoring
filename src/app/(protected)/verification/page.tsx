@@ -1,11 +1,6 @@
-import { getAuthUser, getProfile } from "@/lib/getAuthUser";
 import Image from "next/image";
 
 export default async function VerificationPage() {
-  const user = await getAuthUser();
-  const id_number = user?.id_number;
-  const userProfile = await getProfile();
-
   return (
     <div className="flex items-center justify-center h-full">
       <div className="glassmorphic p-7 rounded-xl">

@@ -1,7 +1,5 @@
 import Header from "@/components/Header";
-import SetupProfile from "@/components/Setup-profile";
 import SideBar from "@/components/SideBar";
-import { getProfile } from "@/lib/getAuthUser";
 import Image from "next/image";
 
 export default function ProtectedLayout({

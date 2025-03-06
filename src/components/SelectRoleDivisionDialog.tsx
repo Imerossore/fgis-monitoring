@@ -17,11 +17,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useActionState, useState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Badge } from "./ui/badge";
 import { Edit } from "lucide-react";
 import { setUserRoleDivision } from "@/actions/users";
+import toast from "react-hot-toast";
 
 interface SelectRoleDivisionDialog {
   user: UserType;
@@ -77,6 +78,14 @@ export default function SelectRoleDivisionDialog({
         return "outline";
     }
   };
+
+  useEffect(() => {
+    if (!isPending && state.message) {
+      toast[state.success ? "success" : "error"](state.message, {
+        id: "select-toast",
+      });
+    }
+  }, [isPending, state.success, state.message]);
 
   return (
     <Dialog>

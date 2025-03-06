@@ -4,7 +4,7 @@ import { Input } from "./ui/input";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Label } from "./ui/label";
-import { ActionState, UserType, addProfile } from "@/lib/getAuthUser";
+import { ActionState, addProfile } from "@/lib/getAuthUser";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
@@ -40,7 +40,7 @@ export default function ProfileForm({ user }: { user: string }) {
     } else if (isPending) {
       toast.loading("Updating Profile...", { id: "profile-toast" });
     }
-  }, [isPending, state.success, state.message]);
+  }, [isPending, state.success, state.message, router]);
 
   return (
     <form action={action} className="p-4 flex flex-col gap-5">

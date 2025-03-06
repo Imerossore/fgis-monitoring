@@ -2,8 +2,6 @@
 
 import { getAvatarColor, getInitials } from "@/lib/bg-color-profile";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Button } from "./ui/button";
-import { Edit, Check, X } from "lucide-react";
 import { useState } from "react";
 import { UserType } from "@/lib/getAuthUser";
 import { PendingUserActionDialog } from "./PendingUserActionDialog";
