@@ -1,9 +1,14 @@
-"use client";
-
+import { getPendingUsers, getVerifiedUsers } from "@/actions/users";
+import PendingUserComponent from "@/components/PendingUserComponent";
+import VerifiedUserComponent from "@/components/VerifiedUserComponent";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-export default function UserManagementPage() {
+
+export default async function UserManagementPage() {
+  const verifiedUserData = await getVerifiedUsers();
+  const PendingUserData = await getPendingUsers();
+
   return (
-    <div className="glassmorphic mr-3 p-3  flex flex-col gap-2 ">
+    <div className="glassmorphic mr-3 p-3 flex flex-col gap-2 h-full mb-3">
       <h1 className="text-3xl font-bold text-white">User Management</h1>
       <p className="text-white">
         Manage user accounts by assigning roles. Only verified users will be
@@ -25,11 +30,11 @@ export default function UserManagementPage() {
               Pending
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="verified" className=" bg-card p-5 rounded-sm">
-            <h1>verfified table</h1>
+          <TabsContent value="verified" className=" h-[70vh]  rounded-sm">
+            <VerifiedUserComponent users={verifiedUserData} />
           </TabsContent>
-          <TabsContent value="pending" className="bg-card p-5 rounded-sm">
-            <h1>pending table</h1>
+          <TabsContent value="pending" className=" h-[70vh] rounded-sm">
+            <PendingUserComponent users={PendingUserData} />
           </TabsContent>
         </Tabs>
       </div>

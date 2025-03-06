@@ -47,7 +47,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (state?.success) {
-      router.push("/dashboard");
+      router.push("/");
       toast.success(state.success);
     }
     if (state?.error) {
