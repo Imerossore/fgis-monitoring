@@ -48,7 +48,7 @@ export async function uploadProfile(prevState: unknown, formData: FormData) {
       imageUrl = await uploadToCloudinary(imageFile);
     }
     const user = await getAuthUser();
-    const userId = user?.userId;
+    const userId = user?.id;
 
     const { error } = await supabase.from("profile").insert({
       id: userId,
