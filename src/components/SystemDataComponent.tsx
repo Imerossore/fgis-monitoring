@@ -3,7 +3,7 @@
 import { useState, useEffect, useActionState } from "react";
 import { ActionState, UserType } from "@/lib/getAuthUser";
 import toast from "react-hot-toast";
-import { parseISO, getMonth, getYear } from "date-fns";
+import { parseISO, getMonth, getYear, set } from "date-fns";
 import { useParams } from "next/navigation";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
@@ -184,13 +184,22 @@ export default function SystemDataComponent({
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
   useEffect(() => {
-    if (state.success) {
-      toast.success(state.message);
+    if (!isPending && state.message) {
+      toast[state.success ? "success" : "error"](state.message, {
+        id: "system-toast",
+      });
+
       setIsEditing(false);
-    } else if (state.message) {
-      toast.error(state.message);
+    } else if (isPending) {
+      toast.loading("Processing...", { id: "system-toast" });
     }
-  }, [state]);
+  }, [isPending, state.success, state.message]);
+
+  const getStatusColor = (status: string | undefined) => {
+    if (status === "Completed") return "bg-green-500";
+    if (status === "Ongoing") return "bg-blue-400";
+    return "bg-gray-300";
+  };
 
   return (
     <div className="text-slate-900 p-4 ">
@@ -356,19 +365,13 @@ export default function SystemDataComponent({
               />
               <div>
                 <Badge
-                  className={`${
+                  className={getStatusColor(
                     filteredData[0]?.details.find((d) => d.type === num.type)
-                      ?.status || num.status === "Completed"
-                      ? "bg-green-500"
-                      : filteredData[0]?.details.find(
-                          (d) => d.type === num.type
-                        )?.status || num.status === "Ongoing"
-                      ? "bg-blue-400"
-                      : ""
-                  }`}
+                      ?.status ?? num.status
+                  )}
                 >
                   {filteredData[0]?.details.find((d) => d.type === num.type)
-                    ?.status || num.status}
+                    ?.status ?? num.status}
                 </Badge>
               </div>
               {/* Hidden Input for status */}
