@@ -3,7 +3,7 @@
 import { useState, useEffect, useActionState } from "react";
 import { ActionState, UserType } from "@/lib/getAuthUser";
 import toast from "react-hot-toast";
-import { parseISO, getMonth, getYear, set } from "date-fns";
+import { parseISO, getMonth, getYear } from "date-fns";
 import { useParams } from "next/navigation";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
@@ -98,6 +98,11 @@ export default function SystemDataComponent({
       status: "",
     }))
   );
+
+  const dependencyKey = typeData
+    .map((num) => `${num.actual}-${num.target}`)
+    .join(",");
+
   useEffect(() => {
     setTypeData((prevTypeData) => {
       const updatedData = prevTypeData.map((num) => {
@@ -161,7 +166,7 @@ export default function SystemDataComponent({
 
       return updatedData;
     });
-  }, [typeData.map((num) => `${num.actual}-${num.target}`).join(",")]);
+  }, [dependencyKey]);
 
   const handleInputChange = (
     index: number,
