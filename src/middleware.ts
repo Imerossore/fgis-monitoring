@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAuthUser, getProfile } from "./lib/getAuthUser";
 
-const ProtectedRoutes = ["/dashboard", "/setting"];
+const ProtectedRoutes = ["/dashboard", "/setting", "/user-management"];
 
 const SetupRoutes = ["/setup-profile"];
 

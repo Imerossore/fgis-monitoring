@@ -23,7 +23,7 @@ export default function UserCard({ user }: { user: UserType }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       {isVerified && isHovered && <SelectRoleDivisionDialog user={user} />}
-      <Avatar className="h-24 w-24">
+      <Avatar className="h-20 w-20">
         <AvatarImage src={user.profile?.avatar_url} className="object-cover" />
         <AvatarFallback
           style={{

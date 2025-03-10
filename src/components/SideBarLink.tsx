@@ -12,7 +12,7 @@ type SideBarLinkProps = {
 
 export default function SideBarLink({ label, href, icon }: SideBarLinkProps) {
   const pathname = usePathname();
-  const isActive = pathname === href;
+  const isActive = pathname.startsWith(href);
   return (
     <li className="list-none">
       <Link
