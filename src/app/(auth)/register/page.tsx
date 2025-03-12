@@ -15,10 +15,10 @@ import {
 import { useForm } from "react-hook-form";
 import { useActionState, useEffect, startTransition } from "react";
 import { toast } from "react-hot-toast";
-import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { RegisterFormSchema } from "@/lib/rules";
 import { register } from "@/actions/auth";
+import { Loader2 } from "lucide-react";
 
 export default function RegisterPage() {
   const form = useForm({

@@ -11,10 +11,10 @@ import {
   AlertDialogTrigger,
 } from "./ui/alert-dialog";
 import { Button } from "./ui/button";
-import { Check, X, Loader2 } from "lucide-react";
 import { ActionState, UserType } from "@/lib/getAuthUser";
 import { useActionState } from "react";
 import { updateUserStatus } from "@/actions/users";
+import { Check, Loader2, X } from "lucide-react";
 
 interface UserActionDialogProps {
   user: UserType;

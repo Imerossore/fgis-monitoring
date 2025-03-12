@@ -213,7 +213,7 @@ export default function SystemDataComponent({
           <p className="text-muted-foreground">Filter Date:</p>
           <Select
             value={selectedMonth.toString()}
-            onValueChange={(value) => setSelectedMonth(Number(value))}
+            onValueChange={(value: string) => setSelectedMonth(Number(value))}
           >
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="Select Month" />
@@ -239,7 +239,7 @@ export default function SystemDataComponent({
 
           <Select
             defaultValue={selectedYear.toString()}
-            onValueChange={(value) => setSelectedYear(Number(value))}
+            onValueChange={(value: string) => setSelectedYear(Number(value))}
           >
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="Select Year" />

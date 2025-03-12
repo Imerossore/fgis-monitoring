@@ -8,7 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { LogOut, Settings, MoreVertical } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -16,6 +16,7 @@ import { logout } from "@/actions/auth";
 import { LogoutAlertDialog } from "./LogoutAlertDialog";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { cn } from "@/lib/utils";
+import { LogOut, MoreVertical, Settings } from "lucide-react";
 
 interface MenuOptionProps {
   variant: "more" | "dropdown";

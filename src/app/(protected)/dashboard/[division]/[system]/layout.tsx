@@ -1,7 +1,8 @@
 "use client";
 import { Divisions } from "@/lib/contants";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
+import { IoChevronBack } from "react-icons/io5";
 
 export default function SystemLayout({
   children,
@@ -12,6 +13,7 @@ export default function SystemLayout({
 
   const divisionData = Divisions.find((item) => item.name === division);
   const systemData = divisionData?.systems.find((item) => item.name === system);
+  const router = useRouter();
 
   if (!divisionData) {
     return (
@@ -33,7 +35,13 @@ export default function SystemLayout({
       <h1 className="text-3xl font-semibold">
         {division?.toLocaleString().replace(/-/g, " ").toUpperCase()}
       </h1>
-      <div className="bg-card p-5 text-muted-foreground rounded-sm ">
+      <div className="bg-card p-5 text-muted-foreground rounded-sm flex items-center space-x-2">
+        <IoChevronBack
+          size={30}
+          className="text-primary cursor-pointer"
+          role="button"
+          onClick={() => router.replace("/dashboard")}
+        />
         <ul className="list-none flex space-x-1">
           {divisionData.systems?.map((system) => (
             <li key={system.id}>

@@ -3,8 +3,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import ToggleMode from "./toggleMode";
 import { getProfile } from "@/lib/getAuthUser";
 import MenuOption from "./MenuOption";
-import { User } from "lucide-react";
 import { getAvatarColor, getInitials } from "@/lib/bg-color-profile";
+import { User } from "lucide-react";
 
 export default async function Header() {
   const user = await getProfile();

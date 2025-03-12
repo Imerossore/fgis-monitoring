@@ -20,9 +20,9 @@ import {
 import { useActionState, useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Badge } from "./ui/badge";
-import { Edit } from "lucide-react";
 import { setUserRoleDivision } from "@/actions/users";
 import toast from "react-hot-toast";
+import { Edit } from "lucide-react";
 
 interface SelectRoleDivisionDialog {
   user: UserType;

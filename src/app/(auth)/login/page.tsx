@@ -15,11 +15,11 @@ import {
 import { useForm } from "react-hook-form";
 import { useActionState, useEffect, startTransition } from "react";
 import { toast } from "react-hot-toast";
-import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Switch } from "@/components/ui/switch";
 import { LoginFormSchema } from "@/lib/rules";
 import { login } from "@/actions/auth";
+import { Loader2 } from "lucide-react";
 
 export default function LoginPage() {
   const form = useForm({
